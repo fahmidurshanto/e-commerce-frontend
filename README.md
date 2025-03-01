@@ -1,6 +1,6 @@
 # Carry Craft 👜
 
-![Carry Craft Banner](./src/assets/bags_banner.jpg) <!-- Add your actual banner path -->
+![Carry Craft Banner](./src/assets/CarryCraft.png) 
 
 **Your Premium Destination for Bags & Luggage**  
 An elegant e-commerce platform specializing in high-quality bags, backpacks, and travel accessories.
@@ -33,8 +33,5 @@ An elegant e-commerce platform specializing in high-quality bags, backpacks, and
 - **Icons**:  
   ![React Icons](https://img.shields.io/badge/React_Icons-FF4154?style=for-the-badge)
 
-## 📦 Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/carry-craft.git
+

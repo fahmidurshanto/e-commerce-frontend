@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import BagCard from "../BagCard/BagCard";
+import { motion } from 'framer-motion';
+
+
 const LatestCollection = () => {
+    const [bags, setBags] = useState([]);
+    useEffect(()=>{
+        fetch("bags.json")
+        .then(res=> res.json())
+        .then(data=> setBags(data))
+    },[])
+
+    console.log(bags);
   return (
     <div>
       <div className="text-center space-y-3 my-10">
@@ -10,6 +23,11 @@ const LatestCollection = () => {
           for every occasion. From trendy backpacks to premium travel luggage,
           explore the latest arrivals designed to suit your lifestyle.
         </p>
+      </div>
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
+        {
+            bags.map((bag)=> <BagCard key={bag.id} bag={bag}></BagCard>)
+        }
       </div>
     </div>
   );

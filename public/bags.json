@@ -13,6 +13,7 @@
         "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
         "https://images.unsplash.com/photo-1580910053024-j7f4cf7d1440"
       ],
+      "thumbnail": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
       "brand": "BagMaster"
     },
     {
@@ -28,6 +29,7 @@
       "images": [
         "https://images.pexels.com/photos/6074996/pexels-photo-6074996.jpeg"
       ],
+      "thumbnail": "https://images.pexels.com/photos/6074996/pexels-photo-6074996.jpeg",
       "brand": "RetroBags"
     },
     {
@@ -43,6 +45,7 @@
       "images": [
         "https://images.unsplash.com/photo-1576339852596-347e2f4e0e51"
       ],
+      "thumbnail": "https://images.unsplash.com/photo-1576339852596-347e2f4e0e51",
       "brand": "OutdoorPro"
     },
     {
@@ -59,6 +62,7 @@
         "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg",
         "https://images.pexels.com/photos/1275929/pexels-photo-1275929.jpeg"
       ],
+      "thumbnail": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg",
       "brand": "SecurePack"
     },
     {
@@ -74,6 +78,7 @@
       "images": [
         "https://images.unsplash.com/photo-1504630083234-14187a9df0f5"
       ],
+      "thumbnail": "https://images.unsplash.com/photo-1504630083234-14187a9df0f5",
       "brand": "TravelGear"
     },
     {
@@ -89,6 +94,7 @@
       "images": [
         "https://images.pexels.com/photos/3646172/pexels-photo-3646172.jpeg"
       ],
+      "thumbnail": "https://images.pexels.com/photos/3646172/pexels-photo-3646172.jpeg",
       "brand": "EcoChic"
     },
     {
@@ -104,6 +110,7 @@
       "images": [
         "https://images.unsplash.com/photo-1566150902887-9679ecc155ba"
       ],
+      "thumbnail": "https://images.unsplash.com/photo-1566150902887-9679ecc155ba",
       "brand": "UrbanStyle"
     },
     {
@@ -119,6 +126,7 @@
       "images": [
         "https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg"
       ],
+      "thumbnail": "https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg",
       "brand": "TinyTots"
     },
     {
@@ -134,6 +142,7 @@
       "images": [
         "https://images.unsplash.com/photo-1591047139820-d91deac6fccf"
       ],
+      "thumbnail": "https://images.unsplash.com/photo-1591047139820-d91deac6fccf",
       "brand": "LuxeBags"
     },
     {
@@ -149,139 +158,150 @@
       "images": [
         "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg"
       ],
+      "thumbnail": "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg",
       "brand": "PackLight"
     },
     {
-        "id": 11,
-        "name": "Military Tactical Backpack",
-        "price": 3800,
-        "currency": "BDT",
-        "rating": 4.7,
-        "reviews": 114,
-        "description": "Durable tactical backpack with MOLLE webbing and hydration compartment.",
-        "sizes": ["Large"],
-        "availability": "In Stock",
-        "images": ["https://images.pexels.com/photos/1275929/pexels-photo-1275929.jpeg"],
-        "brand": "ArmorGear"
-      },
-      {
-        "id": 12,
-        "name": "Vegan Leather Crossbody Bag",
-        "price": 2800,
-        "currency": "BDT",
-        "rating": 4.5,
-        "reviews": 88,
-        "description": "Cruelty-free crossbody bag made from synthetic leather.",
-        "sizes": ["Small"],
-        "availability": "In Stock",
-        "images": ["https://images.unsplash.com/photo-1601922523604-87e7a38a6995"],
-        "brand": "EthicalFashion"
-      },
-      {
-        "id": 13,
-        "name": "Business Suitcase",
-        "price": 6800,
-        "currency": "BDT",
-        "rating": 4.6,
-        "reviews": 72,
-        "description": "Professional hard-shell suitcase with built-in USB port.",
-        "sizes": ["Medium"],
-        "availability": "In Stock",
-        "images": [
-          "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f",
-          "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e"
-        ],
-        "brand": "ExecuTravel"
-      },
-      {
-        "id": 14,
-        "name": "Mini Waist Pack",
-        "price": 900,
-        "currency": "BDT",
-        "rating": 3.9,
-        "reviews": 53,
-        "description": "Compact waist pack for essentials, perfect for festivals.",
-        "sizes": ["One Size"],
-        "availability": "In Stock",
-        "images": ["https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg"],
-        "brand": "StreetStyle"
-      },
-      {
-        "id": 15,
-        "name": "Rolling Cabin Bag",
-        "price": 5500,
-        "currency": "BDT",
-        "rating": 4.4,
-        "reviews": 120,
-        "description": "Cabin-approved rolling luggage with 360-degree spinner wheels.",
-        "sizes": ["Medium"],
-        "availability": "In Stock",
-        "images": ["https://images.pexels.com/photos/6188487/pexels-photo-6188487.jpeg"],
-        "brand": "SkyHigh"
-      },
-      {
-        "id": 16,
-        "name": "Canvas Backpack with Laptop Sleeve",
-        "price": 2700,
-        "currency": "BDT",
-        "rating": 4.3,
-        "reviews": 96,
-        "description": "Stylish unisex backpack with a padded laptop compartment.",
-        "sizes": ["Medium"],
-        "availability": "In Stock",
-        "images": ["https://images.unsplash.com/photo-1553062407-98eeb64c6a62"],
-        "brand": "UrbanTrend"
-      },
-      {
-        "id": 17,
-        "name": "Leather Briefcase",
-        "price": 6100,
-        "currency": "BDT",
-        "rating": 4.8,
-        "reviews": 145,
-        "description": "Professional briefcase with combination lock and file organizer.",
-        "sizes": ["Medium"],
-        "availability": "Out of Stock",
-        "images": ["https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg"],
-        "brand": "CorporateClass"
-      },
-      {
-        "id": 18,
-        "name": "Travel Toiletry Bag",
-        "price": 1200,
-        "currency": "BDT",
-        "rating": 4.0,
-        "reviews": 60,
-        "description": "Water-resistant toiletry bag with hanging hook.",
-        "sizes": ["Small"],
-        "availability": "In Stock",
-        "images": ["https://images.unsplash.com/photo-1595872164563-5dc7e0500b84"],
-        "brand": "TravelEssentials"
-      },
-      {
-        "id": 19,
-        "name": "Nylon Gym Duffel",
-        "price": 2300,
-        "currency": "BDT",
-        "rating": 4.2,
-        "reviews": 84,
-        "description": "Ventilated gym duffel with separate shoe compartment.",
-        "sizes": ["Large"],
-        "availability": "In Stock",
-        "images": ["https://images.pexels.com/photos/4662346/pexels-photo-4662346.jpeg"],
-        "brand": "FitLife"
-      },
-      {
-        "id": 20,
-        "name": "Vintage Camera Bag",
-        "price": 3400,
-        "currency": "BDT",
-        "rating": 4.6,
-        "reviews": 43,
-        "description": "Retro-style camera bag with adjustable dividers.",
-        "sizes": ["Small"],
-        "availability": "In Stock",
-        "images": ["https://images.unsplash.com/photo-1596477099010-05b4a5c6d5b3"],
-        "brand": "PhotoLens"
-      }
+      "id": 11,
+      "name": "Military Tactical Backpack",
+      "price": 3800,
+      "currency": "BDT",
+      "rating": 4.7,
+      "reviews": 114,
+      "description": "Durable tactical backpack with MOLLE webbing and hydration compartment.",
+      "sizes": ["Large"],
+      "availability": "In Stock",
+      "images": ["https://images.pexels.com/photos/1275929/pexels-photo-1275929.jpeg"],
+      "thumbnail": "https://images.pexels.com/photos/1275929/pexels-photo-1275929.jpeg",
+      "brand": "ArmorGear"
+    },
+    {
+      "id": 12,
+      "name": "Vegan Leather Crossbody Bag",
+      "price": 2800,
+      "currency": "BDT",
+      "rating": 4.5,
+      "reviews": 88,
+      "description": "Cruelty-free crossbody bag made from synthetic leather.",
+      "sizes": ["Small"],
+      "availability": "In Stock",
+      "images": ["https://images.unsplash.com/photo-1601922523604-87e7a38a6995"],
+      "thumbnail": "https://images.unsplash.com/photo-1601922523604-87e7a38a6995",
+      "brand": "EthicalFashion"
+    },
+    {
+      "id": 13,
+      "name": "Business Suitcase",
+      "price": 6800,
+      "currency": "BDT",
+      "rating": 4.6,
+      "reviews": 72,
+      "description": "Professional hard-shell suitcase with built-in USB port.",
+      "sizes": ["Medium"],
+      "availability": "In Stock",
+      "images": [
+        "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f",
+        "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f",
+      "brand": "ExecuTravel"
+    },
+    {
+      "id": 14,
+      "name": "Mini Waist Pack",
+      "price": 900,
+      "currency": "BDT",
+      "rating": 3.9,
+      "reviews": 53,
+      "description": "Compact waist pack for essentials, perfect for festivals.",
+      "sizes": ["One Size"],
+      "availability": "In Stock",
+      "images": ["https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg"],
+      "thumbnail": "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg",
+      "brand": "StreetStyle"
+    },
+    {
+      "id": 15,
+      "name": "Rolling Cabin Bag",
+      "price": 5500,
+      "currency": "BDT",
+      "rating": 4.4,
+      "reviews": 120,
+      "description": "Cabin-approved rolling luggage with 360-degree spinner wheels.",
+      "sizes": ["Medium"],
+      "availability": "In Stock",
+      "images": ["https://images.pexels.com/photos/6188487/pexels-photo-6188487.jpeg"],
+      "thumbnail": "https://images.pexels.com/photos/6188487/pexels-photo-6188487.jpeg",
+      "brand": "SkyHigh"
+    },
+    {
+      "id": 16,
+      "name": "Canvas Backpack with Laptop Sleeve",
+      "price": 2700,
+      "currency": "BDT",
+      "rating": 4.3,
+      "reviews": 96,
+      "description": "Stylish unisex backpack with a padded laptop compartment.",
+      "sizes": ["Medium"],
+      "availability": "In Stock",
+      "images": ["https://images.unsplash.com/photo-1553062407-98eeb64c6a62"],
+      "thumbnail": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
+      "brand": "UrbanTrend"
+    },
+    {
+      "id": 17,
+      "name": "Leather Briefcase",
+      "price": 6100,
+      "currency": "BDT",
+      "rating": 4.8,
+      "reviews": 145,
+      "description": "Professional briefcase with combination lock and file organizer.",
+      "sizes": ["Medium"],
+      "availability": "Out of Stock",
+      "images": ["https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg"],
+      "thumbnail": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg",
+      "brand": "CorporateClass"
+    },
+    {
+      "id": 18,
+      "name": "Travel Toiletry Bag",
+      "price": 1200,
+      "currency": "BDT",
+      "rating": 4.0,
+      "reviews": 60,
+      "description": "Water-resistant toiletry bag with hanging hook.",
+      "sizes": ["Small"],
+      "availability": "In Stock",
+      "images": ["https://images.unsplash.com/photo-1595872164563-5dc7e0500b84"],
+      "thumbnail": "https://images.unsplash.com/photo-1595872164563-5dc7e0500b84",
+      "brand": "TravelEssentials"
+    },
+    {
+      "id": 19,
+      "name": "Nylon Gym Duffel",
+      "price": 2300,
+      "currency": "BDT",
+      "rating": 4.2,
+      "reviews": 84,
+      "description": "Ventilated gym duffel with separate shoe compartment.",
+      "sizes": ["Large"],
+      "availability": "In Stock",
+      "images": ["https://images.pexels.com/photos/4662346/pexels-photo-4662346.jpeg"],
+      "thumbnail": "https://images.pexels.com/photos/4662346/pexels-photo-4662346.jpeg",
+      "brand": "FitLife"
+    },
+    {
+      "id": 20,
+      "name": "Vintage Camera Bag",
+      "price": 3400,
+      "currency": "BDT",
+      "rating": 4.6,
+      "reviews": 43,
+      "description": "Retro-style camera bag with adjustable dividers.",
+      "sizes": ["Small"],
+      "availability": "In Stock",
+      "images": ["https://images.unsplash.com/photo-1596477099010-05b4a5c6d5b3"],
+      "thumbnail": "https://images.unsplash.com/photo-1596477099010-05b4a5c6d5b3",
+      "brand": "PhotoLens"
+    }
   ]

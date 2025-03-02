@@ -14,6 +14,22 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/productDetails/:id",
+                loader: ({ params }) => 
+                    fetch("bags.json")
+                      .then(response => response.json())
+                      .then(bags => {
+                        const product = bags.find(bag => bag.id === parseInt(params.id));
+                        
+                        if (!product) {
+                          throw new Response("Product Not Found", { status: 404 });
+                        }
+                        
+                        return product;
+                      })
+                      .catch(error => {
+                        console.error("Error loading product:", error);
+                        throw new Response("Failed to load product", { status: 500 });
+                      }),
                 element: <ProductDetails></ProductDetails>
             }
         ]

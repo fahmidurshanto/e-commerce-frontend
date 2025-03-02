@@ -1,100 +1,137 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState('');
   const [activeTab, setActiveTab] = useState('description');
+  const [currentImage, setCurrentImage] = useState('');
+  const product = useLoaderData();
 
-  const sizes = ['M', 'L', 'XL'];
-  const features = [
-    'Greenhead 2024 Authentic - Deep with Confidential',
-    'Eggy Cookie Delivery - Prep If not Decorated',
-    'Hassle Free Recruit & Exchanges - 10 Days No Questions Asked'
+  // Destructure with fallback values
+  const {
+    id,
+    name = '',
+    price = 0,
+    sizes = [],
+    description = '',
+    reviews = [],
+    images = [],
+    thumbnail = '',
+    rating = 0
+  } = product || {};
+
+  // Combine thumbnail with images and remove duplicates
+  const allImages = Array.from(new Set([thumbnail, ...images]));
+  if (!currentImage && allImages.length > 0) {
+    setCurrentImage(allImages[0]);
+  }
+
+  const tabs = [
+    { id: 'description', label: 'Description' },
+    { id: 'reviews', label: `Reviews (${reviews.length})` }
   ];
 
   return (
     <motion.div 
-      className="flex flex-col md:flex-row gap-8 p-6 max-w-6xl mx-auto"
+      className="flex flex-col md:flex-row gap-8 p-6 max-w-6xl mx-auto my-10"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Product Image */}
-      <motion.div 
-        className="md:w-1/2 bg-gray-100 rounded-lg overflow-hidden"
-        whileHover={{ scale: 1.02 }}
-        transition={{ type: 'spring', stiffness: 300 }}
-      >
-        <img 
-          src="/path-to-image.jpg" 
-          alt="T-shirt" 
-          className="w-full h-full object-cover"
-        />
-      </motion.div>
+      {/* Image Gallery Section */}
+      <div className="md:w-1/2">
+        <motion.div 
+          className="bg-gray-100 rounded-lg overflow-hidden mb-4"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+        >
+          <img 
+            src={currentImage} 
+            alt={name}
+            className="w-full h-96 object-cover"
+          />
+        </motion.div>
 
-      {/* Product Details */}
+        {/* Thumbnail Gallery */}
+        <div className="flex gap-4 overflow-x-auto pb-2">
+          {allImages.map((img, index) => (
+            <motion.button
+              key={index}
+              onClick={() => setCurrentImage(img)}
+              className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${
+                currentImage === img ? 'border-gray-800' : 'border-gray-200'
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img 
+                src={img} 
+                alt={`${name} thumbnail ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
+      {/* Product Info Section */}
       <div className="md:w-1/2 space-y-6">
-        {/* Title and Price */}
+        {/* Product ID and Header */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="text-3xl font-bold text-gray-800">Men Round Neck Pure Cotton T-shirt</h1>
-          <p className="text-2xl font-semibold text-gray-700 mt-2">$200</p>
-        </motion.div>
-
-        {/* Size Selection */}
-        <motion.div 
-          className="space-y-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h3 className="text-lg font-medium text-gray-600">Select Size</h3>
-          <div className="flex gap-4">
-            {sizes.map((size) => (
-              <motion.button
-                key={size}
-                onClick={() => setSelectedSize(size)}
-                className={`px-6 py-2 rounded-full border ${
-                  selectedSize === size 
-                    ? 'bg-gray-800 text-white border-gray-800' 
-                    : 'border-gray-300 hover:border-gray-800'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {size}
-              </motion.button>
-            ))}
+          <p className="text-sm text-gray-500 mb-2">Product ID: {id}</p>
+          <h1 className="text-3xl font-bold text-gray-800">{name}</h1>
+          <div className="flex items-center gap-4 mt-2">
+            <p className="text-2xl font-semibold text-gray-700">৳{price}</p>
+            <div className="flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <span 
+                  key={i}
+                  className={`text-xl ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
+        {/* Size Selector */}
+        {sizes.length > 0 && (
+          <motion.div 
+            className="space-y-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <h3 className="text-lg font-medium text-gray-600">Select Size</h3>
+            <div className="flex gap-4 flex-wrap">
+              {sizes.map((size) => (
+                <motion.button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`px-6 py-2 rounded-full border ${
+                    selectedSize === size 
+                      ? 'bg-gray-800 text-white border-gray-800' 
+                      : 'border-gray-300 hover:border-gray-800'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {size}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
         <div className="h-px bg-gray-200 my-6" />
 
-        {/* Features */}
-        <motion.div 
-          className="space-y-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center gap-2 text-gray-600"
-              initial={{ x: 20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2 * index }}
-            >
-              <div className="w-1.5 h-1.5 bg-gray-600 rounded-full" />
-              <p>{feature}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Add to Cart Button */}
+        {/* Add to Cart */}
         <motion.button
           className="w-full py-4 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
           whileHover={{ scale: 1.02 }}
@@ -104,35 +141,62 @@ const ProductDetails = () => {
           ADD TO CART
         </motion.button>
 
-        {/* Tabs */}
+        {/* Info Tabs */}
         <div className="flex border-b border-gray-200">
-          {['description', 'reviews'].map((tab) => (
+          {tabs.map((tab) => (
             <motion.div
-              key={tab}
-              onClick={() => setActiveTab(tab)}
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
               className={`px-4 pb-2 cursor-pointer ${
-                activeTab === tab 
+                activeTab === tab.id 
                   ? 'text-gray-800 border-b-2 border-gray-800' 
                   : 'text-gray-400 hover:text-gray-600'
               }`}
               whileHover={{ scale: 1.05 }}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)} {tab === 'reviews' && '(122)'}
+              {tab.label}
             </motion.div>
           ))}
         </div>
 
-        {/* Description */}
-        <motion.p
-          className="text-gray-600 leading-relaxed"
+        {/* Tab Content */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ duration: 0.3 }}
         >
-          Elevate your style with our meticulously crafted premium quality products. Designed with a perfect balance 
-          of elegance and practicality, these items are made from premium materials that ensure both durability 
-          and comfort.
-        </motion.p>
+          {activeTab === 'description' ? (
+            <div className="text-gray-600 space-y-4">
+              <p className="leading-relaxed whitespace-pre-wrap">{description}</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {reviews.map((review, index) => (
+                <motion.div
+                  key={index}
+                  className="p-4 bg-gray-50 rounded-lg"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="font-medium">{review.author}</span>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <span 
+                          key={i}
+                          className={`text-sm ${i < review.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                        >
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-600">{review.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </motion.div>
       </div>
     </motion.div>
   );

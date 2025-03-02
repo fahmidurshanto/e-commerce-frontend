@@ -8,6 +8,11 @@ const ProductDetails = () => {
   const [currentImage, setCurrentImage] = useState('');
   const product = useLoaderData();
 
+  const handleAddToCart = () =>{
+    console.log("Cart button clicked");
+  }
+
+
   // Destructure with fallback values
   const {
     id,
@@ -133,6 +138,7 @@ const ProductDetails = () => {
 
         {/* Add to Cart */}
         <motion.button
+          onClick={handleAddToCart}
           className="w-full py-4 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const BagCard = ({ bag }) => {
-    const { name, brand, price, thumbnail } = bag;
+    const { name, brand, price, thumbnail, id } = bag;
+
+    // Create motion-enhanced Link component
+    const MotionLink = motion(Link);
 
     // Animation variants
     const cardVariants = {
@@ -28,18 +32,14 @@ const BagCard = ({ bag }) => {
         }
     };
 
-    const textVariants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 }
-    };
-
     return (
-        <motion.div
-            className='cursor-pointer'
+        <MotionLink 
+            to={`/productDetails/${id}`}
+            className='block w-full cursor-pointer'
+            variants={cardVariants}
             initial="hidden"
             animate="visible"
             whileHover="hover"
-            variants={cardVariants}
         >
             <motion.img 
                 src={thumbnail} 
@@ -48,34 +48,12 @@ const BagCard = ({ bag }) => {
                 whileHover="hover"
             />
             
-            <motion.div 
-                className='mt-3 space-y-1'
-                variants={{
-                    visible: { 
-                        transition: { staggerChildren: 0.1 } 
-                    }
-                }}
-            >
-                <motion.p 
-                    className='text-gray-600 font-extralight'
-                    variants={textVariants}
-                >
-                    {name}
-                </motion.p>
-                <motion.p 
-                    className='text-gray-600 font-extralight'
-                    variants={textVariants}
-                >
-                    Brand: {brand}
-                </motion.p>
-                <motion.p 
-                    className='font-medium'
-                    variants={textVariants}
-                >
-                    Price: ৳{price}
-                </motion.p>
-            </motion.div>
-        </motion.div>
+            <div className='mt-3 space-y-1'>
+                <p className='text-gray-600 font-extralight'>{name}</p>
+                <p className='text-gray-600 font-extralight'>Brand: {brand}</p>
+                <p className='font-medium'>Price: ৳{price}</p>
+            </div>
+        </MotionLink>
     );
 };
 

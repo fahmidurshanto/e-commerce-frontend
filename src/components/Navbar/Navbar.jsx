@@ -80,23 +80,59 @@ const Navbar = () => {
 
           {/* Desktop navigation with staggered animation */}
           <div className="hidden md:flex space-x-4">
-            {["HOME", "COLLECTION", "ABOUT", "CONTACT"].map((item, index) => (
+            {/* {["HOME", "COLLECTION", "ABOUT", "CONTACT"].map((item, index) => ( */}
               <motion.div
-                key={item}
                 initial="hidden"
                 animate="visible"
                 variants={menuItemVariants}
-                custom={index}
                 whileHover="hover"
               >
                 <Link 
-                  to={`/${item.toLowerCase()}`} 
+                  to={`/`} 
                   className="text-gray-800 hover:text-gray-600"
                 >
-                  {item}
+                  HOME
                 </Link>
               </motion.div>
-            ))}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={menuItemVariants}
+                whileHover="hover"
+              >
+                <Link 
+                  to={`/collection`} 
+                  className="text-gray-800 hover:text-gray-600"
+                >
+                  COLLECTION
+                </Link>
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={menuItemVariants}
+                whileHover="hover"
+              >
+                <Link 
+                  to={`/about`} 
+                  className="text-gray-800 hover:text-gray-600"
+                >
+                  ABOUT
+                </Link>
+              </motion.div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={menuItemVariants}
+                whileHover="hover"
+              >
+                <Link 
+                  to={`/contact`} 
+                  className="text-gray-800 hover:text-gray-600"
+                >
+                  CONTACT
+                </Link>
+              </motion.div>
           </div>
 
           {/* Animated icons section */}
